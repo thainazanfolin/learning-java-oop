@@ -1,12 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package learningjava;
 
 
 public class Garrafa {
    
+    
+    // TODO definir privacidade
+    
    String cor;
    String marca;
    float capacidade;
@@ -32,7 +32,58 @@ public class Garrafa {
             System.out.println("Enchendo a garrafa");
         }
     }
+
+     public void status(){
+        System.out.println("Garrafa da marca:" + this.marca + "e cor " + this.cor); /* this é autorefrencia. O retorno será referente ao objeto que chamou o metodo */ 
+        System.out.println("Capacidade de" + this.capacidade);
+        System.out.println("Está tampada? " + this.tampada);
+        System.out.println("Já está cheia? " + this.cheia);
+ 
+    }
+     
+    public String getCor() {
+        return cor;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public float getCapacidade() {
+        return capacidade;
+    }
+
+    public boolean isTampada() {
+        return tampada;
+    }
+
+    public boolean isCheia() {
+        return cheia;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public void setCapacidade(float capacidade) {
+        this.capacidade = capacidade;
+    }
+
+    public void setTampada(boolean tampada) {
+        this.tampada = tampada;
+    }
+
+    public void setCheia(boolean cheia) {
+        this.cheia = cheia;
+    }
         
+    
+    
+    
     }
     
 

@@ -42,4 +42,46 @@ public class Caneta {
         System.out.println("A carga está em " + this.carga);
  
     }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public String getCor() {
+        return cor;
+    }
+
+    public float getPonta() {
+        return ponta;
+    }
+
+    public int getCarga() {
+        return carga;
+    }
+
+    public boolean isTampada() {
+        return tampada;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+    public void setPonta(float ponta) {
+        this.ponta = ponta;
+    }
+
+    public void setCarga(int carga) {
+        this.carga = carga;
+    }
+
+    public void setTampada(boolean tampada) {
+        this.tampada = tampada;
+    }
+   
+   
 }
