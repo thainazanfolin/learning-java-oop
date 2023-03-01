@@ -7,7 +7,7 @@ public class Treinar {
     /* atributos */ 
    String nome;
    String modalidade;
-   int tempoDeDuração;
+   int tempoDeDuracao;
    int caloriasGastas;
    int frequenciaPorSemana;
 
@@ -19,8 +19,8 @@ public class Treinar {
         return modalidade;
     }
 
-    public int getTempoDeDuração() {
-        return tempoDeDuração;
+    public int getTempoDeDuracao() {
+        return tempoDeDuracao;
     }
 
     public int getCaloriasGastas() {
@@ -39,8 +39,8 @@ public class Treinar {
         this.modalidade = modalidade;
     }
 
-    public void setTempoDeDuração(int tempoDeDuração) {
-        this.tempoDeDuração = tempoDeDuração;
+    public void setTempoDeDuracao(int tempoDeDuração) {
+        this.tempoDeDuracao = tempoDeDuração;
     }
 
     public void setCaloriasGastas(int caloriasGastas) {
@@ -51,5 +51,11 @@ public class Treinar {
         this.frequenciaPorSemana = frequenciaPorSemana;
     }
    
+    public void status(){
+        System.out.println("O treino de hoje é:");
+        System.out.println(nome);
+        System.out.println(modalidade);
+        System.out.println(tempoDeDuracao);        
+    }
         
 }
