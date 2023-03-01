@@ -7,11 +7,11 @@ public class Garrafa {
     
     // TODO definir privacidade
     
-   String cor;
-   String marca;
-   float capacidade;
-   boolean tampada;
-   boolean cheia;
+   public String cor;
+   public String marca;
+   public float capacidade;
+   public boolean tampada;
+   public boolean cheia;
    
   
    

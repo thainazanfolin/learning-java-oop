@@ -4,12 +4,12 @@ package learningjava;
 public class Celular {
     
     // definir privacidade
-    String marca; 
-    String modelo;
-    int memoria;
-    boolean memoriaCheia; 
-    int bateria;
-    boolean bateriaCheia;
+    public String marca; 
+    public String modelo;
+    private int memoria;
+    private boolean memoriaCheia; 
+    private int bateria;
+    private boolean bateriaCheia;
 
     public String getMarca() {
         return marca;

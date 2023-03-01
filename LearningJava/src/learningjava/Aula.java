@@ -3,10 +3,10 @@ package learningjava;
 
 public class Aula {
     
-    String nome;
-    String nomeDoProfesor;
-    int duracao;
-    int semestre;
+    public String nome;
+    public String nomeDoProfesor;
+    private int duracao;
+    private int semestre;
 
     public String getNome() {
         return nome;

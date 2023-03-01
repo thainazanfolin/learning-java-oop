@@ -5,11 +5,11 @@ package learningjava;
 public class Treinar {
     
     /* atributos */ 
-   String nome;
-   String modalidade;
-   int tempoDeDuracao;
-   int caloriasGastas;
-   int frequenciaPorSemana;
+   public String nome;
+   public String modalidade;
+   private int tempoDeDuracao;
+   private int caloriasGastas;
+   private int frequenciaPorSemana;
 
     public String getNome() {
         return nome;
