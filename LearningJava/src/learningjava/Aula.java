@@ -7,6 +7,13 @@ public class Aula {
     public String nomeDoProfesor;
     private int duracao;
     private int semestre;
+    
+    public Aula(String nome, String nomeDoProfessor, int duracao, int semestre){
+        this.nome = nome;
+        this.nomeDoProfesor = nomeDoProfessor;
+        this.duracao = duracao;
+        this.semestre = semestre;
+    }
 
     public String getNome() {
         return nome;

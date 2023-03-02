@@ -11,6 +11,18 @@ public class Celular {
     private int bateria;
     private boolean bateriaCheia;
 
+    
+    // construtor
+    
+    public Celular(String modelo, int memoria){
+        this.marca = "Samsung";
+        this.modelo = modelo;
+        this.memoria = memoria;
+        this.memoriaCheia = true;
+        this.bateria = 100;
+        this.bateriaCheia = true;      
+    }
+    
     public String getMarca() {
         return marca;
     }

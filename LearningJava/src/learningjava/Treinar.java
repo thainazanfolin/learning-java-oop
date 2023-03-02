@@ -10,6 +10,14 @@ public class Treinar {
    private int tempoDeDuracao;
    private int caloriasGastas;
    private int frequenciaPorSemana;
+   
+   public Treinar(String nome, String modalidade, int tempoDeDuracao, int calorias, int frequencia){
+       this.nome = nome;
+       this. modalidade = modalidade;
+       this.tempoDeDuracao = tempoDeDuracao;
+       this.caloriasGastas = calorias;
+       this.frequenciaPorSemana = frequencia;
+   }
 
     public String getNome() {
         return nome;
