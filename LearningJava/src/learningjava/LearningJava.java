@@ -28,20 +28,24 @@ public class LearningJava {
       //  c2.ponta = 0.5f;
        c2.destampar();
        c2.status();
+       
+       // com o construtor
+     
         
        /* GARRAFA */ 
        
-       Garrafa garrafa1 = new Garrafa();
+       Garrafa garrafa1 = new Garrafa("preta", null, 1000);
        
         System.out.println("Garrafa 1");
         
-        garrafa1.capacidade = 1000;
         garrafa1.cheia = false;
-        garrafa1.cor = "preta";
-        garrafa1.marca = null;
+
+      
         
         garrafa1.encher();
         
+        // com o construtor
+        Garrafa garrafa3 = new Garrafa("azul", "fresh", 1000);
                 
         
         

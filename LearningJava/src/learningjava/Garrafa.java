@@ -13,7 +13,15 @@ public class Garrafa {
    public boolean tampada;
    public boolean cheia;
    
-  
+   //método construtor, que seta o objeto de acordo com os parâmetros. Tem o mesmo nome da classe.
+  public Garrafa (String cor, String marca, float capacidade){
+      this.cor = cor;
+      this.marca = marca;
+      this.capacidade = capacidade;
+      this.tampar();
+      this.encher();
+      
+  }
    
    /* métodos */ 
    void tampar(){

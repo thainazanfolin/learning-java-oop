@@ -83,5 +83,11 @@ public class Caneta {
         this.tampada = tampada;
     }
    
-   
+   // construtor
+/*
+    public Caneta(String modelo, String cor) {
+        this.modelo = modelo;
+        this.cor = cor;
+    }
+    */
 }
