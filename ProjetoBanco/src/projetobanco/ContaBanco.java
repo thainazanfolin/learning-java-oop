@@ -58,4 +58,45 @@ public class ContaBanco {
         this.status = status;
     }
     
+    // métodos
+    
+    public void abrirConta(){
+        this.status = true;     //status true, conta aberta
+        
+        if (this.tipo == "cp"){
+            this.saldo = 150;   // ao abrir uma conta cp, o dono recebe 150 reais. Nao precisa somar, pois a conta nao existia, logo, está zerada
+        }
+        
+        if (this.tipo == "cc"){
+            this.saldo = 50;    // ao abrir uma conta cc, o dono recebe 50 reais. Nao precisa somar, pois a conta nao existia, logo, está zerada
+        }
+    }
+    
+    public void fecharConta(){  // retirar o saldo. Se estiver negativo, não permitir o fechamento (mostrar erro)
+        // TODO
+    }
+    
+    public void depositar(double valorDep){    //parametro: valor a ser depositado, passado na main
+        this.saldo = saldo + valorDep;         //soma valor recebido ao saldo
+    }
+   
+    public void sacar(double valorSaque){
+        if (this.saldo >= valorSaque){                   //permite o saque apenas se o valor do saldo for maior que o pedido de saque, ou seja, se houver saldo suficiente
+             this.saldo = saldo - valorSaque;
+        }
+        if (this.saldo < valorSaque) {
+            System.out.println("Saldo insuficiente para realizar o saque");     // caso nao houver saldo suficiente
+        }
+       
+    }
+    
+    public void pagaMensal(){
+        if (this.tipo == "cc"){
+            this.saldo = saldo - 12;        // retira 12 reais da conta cc toda vez que for chamado 
+        }
+        
+        if(this.tipo == "cp"){
+            this.saldo = saldo - 20;
+        }
+    }
 }
