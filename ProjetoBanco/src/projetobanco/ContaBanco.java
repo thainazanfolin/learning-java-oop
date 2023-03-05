@@ -58,8 +58,14 @@ public class ContaBanco {
         this.status = status;
     }
     
-    //metodo construtor
-        // TODO
+    //metodo construtor -> ACERTAR
+        public ContaBanco(int numConta, String tipo, String nome){
+                   this.numConta = numConta;
+                   String nome1 = nome;
+                   setDono(nome1);
+                   setSaldo(0); 
+                   setStatus(false)
+        }
     
     // métodos
     
