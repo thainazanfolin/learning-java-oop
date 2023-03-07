@@ -58,19 +58,21 @@ public class ContaBanco {
         this.status = status;
     }
     
-    //metodo construtor -> ACERTAR
+    //metodo construtor 
         public ContaBanco(int numConta, String tipo, String nome){
                    this.numConta = numConta;
-                   String nome1 = nome;
-                   setDono(nome1);
-                   setSaldo(0); 
-                   setStatus(false)
+                   setTipo(tipo);
+                   dono = nome;
+                   saldo = 0; 
+                   status = false;
         }
     
     // métodos
     
-    public void abrirConta(){
-        this.status = true;     //status true, conta aberta
+    public void abrirConta(String t){
+        
+        setTipo(t);     //setando o atributo da conta com o parametro
+        setStatus(true);     //status true, conta aberta
         
         if (this.tipo == "cp"){
             this.saldo = 150;   // ao abrir uma conta cp, o dono recebe 150 reais. Nao precisa somar, pois a conta nao existia, logo, está zerada
@@ -82,14 +84,29 @@ public class ContaBanco {
     }
     
     public void fecharConta(){  // retirar o saldo. Se estiver negativo, não permitir o fechamento (mostrar erro)
-        // TODO
+            if (getSaldo()>0){
+                System.out.println("Conta com dinheiro");
+            } 
+            
+            if (getSaldo()<0) {
+                System.out.println("Conta em débito");
+            } 
+            
+            if (getSaldo()==0) {
+                setStatus(false);
+            }
     }
     
     public void depositar(double valorDep){    //parametro: valor a ser depositado, passado na main
-        this.saldo = saldo + valorDep;         //soma valor recebido ao saldo
+      
+        if (isStatus() == true) {
+            setSaldo(getSaldo() + valorDep);         //setando o valor com o saldo antigo + o deposito
+        } else{
+            System.out.println("Você ainda não tem uma conta");
+        }     
     }
    
-    public void sacar(double valorSaque){
+    public void sacar(double valorSaque){           // TODO: fazer com set e get
         if (this.saldo >= valorSaque){                   //permite o saque apenas se o valor do saldo for maior que o pedido de saque, ou seja, se houver saldo suficiente
              this.saldo = saldo - valorSaque;
         }
