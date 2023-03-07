@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package projetobanco;
 
 public class ContaBanco {
@@ -14,7 +11,17 @@ public class ContaBanco {
     private double saldo;
     private boolean status;
     
-   //gets
+    
+      //metodo construtor 
+        public ContaBanco(){
+                            
+                   this.saldo = 0; 
+                   this.status = false;
+        }
+        
+        // duvida no construtor: usar set e getters? acusa erro
+        
+   //getters
 
     public int getNumConta() {
         return numConta;
@@ -32,7 +39,7 @@ public class ContaBanco {
         return saldo;
     }
 
-    public boolean isStatus() {
+    public boolean isStatus() {             // metodo booleano fica como IS
         return status;
     }
     
@@ -58,57 +65,51 @@ public class ContaBanco {
         this.status = status;
     }
     
-    //metodo construtor 
-        public ContaBanco(int numConta, String tipo, String nome){
-                   this.numConta = numConta;
-                   setTipo(tipo);
-                   dono = nome;
-                   saldo = 0; 
-                   status = false;
-        }
     
     // métodos
     
     public void abrirConta(String t){
         
-        setTipo(t);     //setando o atributo da conta com o parametro
-        setStatus(true);     //status true, conta aberta
+        this.setTipo(t);     //setando o atributo da conta com o parametro
+        this.setStatus(true);     //status true, conta aberta
         
-        if (this.tipo == "cp"){
-            this.saldo = 150;   // ao abrir uma conta cp, o dono recebe 150 reais. Nao precisa somar, pois a conta nao existia, logo, está zerada
+        if ("cp".equals(t)){            // função equals faz a comparação entre os valores, mas pode usar os operadores tambem
+            this.setSaldo(150);   // ao abrir uma conta cp, o dono recebe 150 reais. Nao precisa somar, pois a conta nao existia, logo, está zerada
         }
         
-        if (this.tipo == "cc"){
-            this.saldo = 50;    // ao abrir uma conta cc, o dono recebe 50 reais. Nao precisa somar, pois a conta nao existia, logo, está zerada
+        if (t == "cc"){
+            this.setSaldo(50);    // ao abrir uma conta cc, o dono recebe 50 reais. Nao precisa somar, pois a conta nao existia, logo, está zerada
         }
     }
     
     public void fecharConta(){  // retirar o saldo. Se estiver negativo, não permitir o fechamento (mostrar erro)
-            if (getSaldo()>0){
+            if (this.getSaldo()>0){
                 System.out.println("Conta com dinheiro");
             } 
             
-            if (getSaldo()<0) {
+            if (this.getSaldo()<0) {
                 System.out.println("Conta em débito");
             } 
             
-            if (getSaldo()==0) {
-                setStatus(false);
+            if (this.getSaldo()==0) {
+                this.setStatus(false);      //fechando a conta
             }
     }
     
     public void depositar(double valorDep){    //parametro: valor a ser depositado, passado na main
       
         if (isStatus() == true) {
-            setSaldo(getSaldo() + valorDep);         //setando o valor com o saldo antigo + o deposito
+            this.setSaldo(this.getSaldo() + valorDep);         //setando o valor com o saldo antigo + o deposito
+            System.out.println("Depósito realizado");
+            System.out.println("Saldo atual: " + this.getSaldo());
         } else{
             System.out.println("Você ainda não tem uma conta");
         }     
     }
    
     public void sacar(double valorSaque){           // TODO: fazer com set e get
-        if (this.saldo >= valorSaque){                   //permite o saque apenas se o valor do saldo for maior que o pedido de saque, ou seja, se houver saldo suficiente
-             this.saldo = saldo - valorSaque;
+        if (this.getSaldo() >= valorSaque){                   //permite o saque apenas se o valor do saldo for maior ou igual ao pedido de saque, ou seja, se houver saldo suficiente
+             this.setSaldo(this.getSaldo() - valorSaque);
         }
         if (this.saldo < valorSaque) {
             System.out.println("Saldo insuficiente para realizar o saque");     // caso nao houver saldo suficiente
@@ -117,12 +118,19 @@ public class ContaBanco {
     }
     
     public void pagaMensal(){
-        if (this.tipo == "cc"){
-            this.saldo = saldo - 12;        // retira 12 reais da conta cc toda vez que for chamado 
+        if ("cc".equals(this.getTipo())){
+            this.setSaldo(getSaldo() - 12);        // retira 12 reais da conta cc toda vez que for chamado 
         }
         
-        if(this.tipo == "cp"){
-            this.saldo = saldo - 20;
+        if(this.getTipo() == "cp"){
+            this.setSaldo(getSaldo() - 20);
         }
+    }
+    
+    public void statusAtual(){
+        System.out.println("Numero da conta: " + getNumConta());
+        System.out.println("Dono da conta: " + getDono());
+        System.out.println("Tipo da conta: " + getTipo());
+        System.out.println("Saldo atual: " + getSaldo());
     }
 }
