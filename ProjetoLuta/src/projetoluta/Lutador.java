@@ -26,8 +26,6 @@ public class Lutador {
         this.empates = empates;
     }
     
- 
-    
     // metodos publicos
     
     public void apresentar(){
