@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package projetoluta;
 
 public class Lutador {
@@ -29,28 +26,38 @@ public class Lutador {
         this.empates = empates;
     }
     
-    
+ 
     
     // metodos publicos
     
     public void apresentar(){
-        
+        System.out.println("Vamos conhecer o lutador!");
+        System.out.println("Lutador: " + this.getNome());
+        System.out.println("Nacionalidade: " + this.getNacionalidade());
+        System.out.println("Idade: " + this.getIdade());
+        System.out.println("Peso: " + this.getPeso() + "kg");
+        System.out.println(this.getVitorias() + " vitórias");
+        System.out.println(this.getDerrotas() + " derrotas");
+        System.out.println(this.getEmpates() + " empates");
     }
     
     public void status(){
-        
+        System.out.println(this.getNome() + " é um Peso " + this.getCategoria());
+        System.out.println(this.getVitorias() + " vitórias");
+        System.out.println(this.getDerrotas() + " derrotas");
+        System.out.println(this.getEmpates() + " empates");
     }
     
     public void ganharLuta(){
-        
+        this.setVitorias(this.getVitorias() + 1);
     }
     
     public void perderLuta(){
-        
+        this.setDerrotas(this.getDerrotas() + 1);
     }
     
     public void empatarLuta(){
-        
+        this.setEmpates(this.getEmpates() + 1);
     }
 
     // metodos especiais
@@ -95,6 +102,8 @@ public class Lutador {
         this.nome = nome;
     }
 
+    
+    
     public void setNacionalidade(String nacionalidade) {
         this.nacionalidade = nacionalidade;
     }
@@ -109,10 +118,21 @@ public class Lutador {
 
     public void setPeso(double peso) {
         this.peso = peso;
+        this.setCategoria();
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    private void setCategoria() {        // set categoria vai ter logica para setar o tipo de categoria de acordo com o peso -> metodo interno, muda de cordo com o setPeso
+       if (this.peso < 52.2){
+           this.categoria = "Inválido";
+       } else if (this.peso <= 70.3){
+           this.categoria = "Leve";
+       } else if (this.peso <= 83.9){
+           this.categoria = "Médio";
+       } else if (this.peso <=120.2){
+           this.categoria = "Pesado";
+       } else {
+           this.categoria = "Inválido";
+       }
     }
 
     public void setVitorias(int vitorias) {
