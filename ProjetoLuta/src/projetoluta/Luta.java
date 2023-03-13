@@ -18,7 +18,7 @@ public class Luta {
     
     //atributos
     private Lutador desafiado;  //  vai ser um OBJETO de lutador. Criar uma relação entre o tipo abstrato e essa classe
-    private Lutador desafiante; // atributo do tipo Lutador
+    private Lutador desafiante; // atributo do tipo Lutador (objeto)
     private int rounds;
     private boolean aprovada;
     
